@@ -16,7 +16,7 @@ function Button({
           : type === "secondary"
           ? "bg-[#EFF1FC]"
           : "bg-[#DBDBDB]"
-      } rounded-2xl text-2xl w-[205px] h-[62px] font-bold`}
+      } rounded-3xl text-2xl w-[205px] h-[62px] font-bold`}
     >
       {text}
     </button>

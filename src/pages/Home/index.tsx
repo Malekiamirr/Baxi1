@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Slider from "../../components/Slider";
+import { Maps } from "..";
 
 function Home({ name, phoneNumber }: { name: string; phoneNumber: string }) {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,8 +38,10 @@ function Home({ name, phoneNumber }: { name: string; phoneNumber: string }) {
         شروع اولین سفر
       </button>
     </div>,
-    <div></div>,
-    <div className="flex flex-col items-center justify-center w-full h-screen gap-60">
+    <div className="h-screen">
+      <Maps goToSlide={goToSlide} />
+    </div>,
+    <div className="flex flex-col items-center justify-center w-full bg-red-300 gap-60">
       <p className="font-bold text-[#A5A9B6] text-3xl">درگاه پرداخت الکی</p>
       <button
         className="font-bold bg-[#8CE9B4] w-[156px] h-[47px] rounded-2xl text-xl"
@@ -71,21 +74,23 @@ function Home({ name, phoneNumber }: { name: string; phoneNumber: string }) {
   ];
 
   return (
-    <div className="w-screen h-screen bg-[#f5f6f9]">
-      <div className="flex items-center justify-center pt-[46px]">
-        <img
-          src="../../../src/assets/logo-orange.svg"
-          className="w-[85px] h-[38px]"
-          alt="logo"
-        />
-      </div>
+    <div className="w-screen h-screen bg-[#f5f6f9] relative">
+      {currentSlide !== 2 && (
+        <div className="flex items-center justify-center pt-[46px]">
+          <img
+            src="../../../src/assets/logo-orange.svg"
+            className="w-[85px] h-[38px]"
+            alt="logo"
+          />
+        </div>
+      )}
       <Slider
         slides={slides}
         currentSlide={currentSlide}
         goToNextSlide={goToNextSlide}
         goToSlide={goToSlide}
         goToPrevSlide={goToPrevSlide}
-        complete={true}
+        map={true}
       />
     </div>
   );

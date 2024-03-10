@@ -8,3 +8,4 @@ export { default as CarInfo } from "./CarInfo/index";
 export { default as Thanks } from "./Thanks/index";
 export { default as Passenger } from "./Passenger/index";
 export { default as Home } from "./Home/index";
+export { default as Maps } from "./Map/index";
