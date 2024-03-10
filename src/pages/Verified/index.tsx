@@ -79,7 +79,10 @@ function Verified({
           </span>
         </div>
 
-        <form className="bg-[#EFF1FC] flex items-center py-2 justify-center rounded-3xl mt-[38px]">
+        <form
+          onSubmit={(e) => e.preventDefault()}
+          className="bg-[#EFF1FC] flex items-center py-2 justify-center rounded-3xl mt-[38px]"
+        >
           <input
             type="number"
             className="outline-none text-center w-2/3 bg-[#EFF1FC] font-bold"

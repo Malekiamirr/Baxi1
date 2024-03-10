@@ -5,6 +5,7 @@ import {
   Driver,
   InitialLoading,
   Login,
+  Passenger,
   SelectUserType,
   Thanks,
   Verified,
@@ -87,32 +88,42 @@ function App() {
           </div>
 
           <div className="w-screen">
-            {userType && (
+            {userType === "driver" ? (
               <Driver
                 handleNext={handleNext}
                 gender={gender}
                 setGender={setGender}
               />
+            ) : (
+              <Passenger
+                gender={gender}
+                setGender={setGender}
+                handleNext={handleNext}
+              />
             )}
           </div>
 
-          <div className="w-screen">
-            <Collaboration
-              handleNext={handleNext}
-              setColabrate={setColabrate}
-              gender={gender}
-            />
-          </div>
-
-          <div className="w-screen">
-            {colabrate && (
-              <CarInfo colabrate={colabrate} handleNext={handleNext} />
-            )}
-          </div>
-
-          <div className="w-screen">
-            <Thanks page={page} />
-          </div>
+          {userType === "driver" && (
+            <div className="w-screen">
+              <Collaboration
+                handleNext={handleNext}
+                setColabrate={setColabrate}
+                gender={gender}
+              />
+            </div>
+          )}
+          {userType === "driver" && (
+            <div className="w-screen">
+              {colabrate && (
+                <CarInfo colabrate={colabrate} handleNext={handleNext} />
+              )}
+            </div>
+          )}
+          {userType === "driver" && (
+            <div className="w-screen">
+              <Thanks page={page} />
+            </div>
+          )}
         </div>
       </div>
     </div>

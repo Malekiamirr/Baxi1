@@ -6,3 +6,4 @@ export { default as Driver } from "./Driver/index";
 export { default as Collaboration } from "./Collaboration/index";
 export { default as CarInfo } from "./CarInfo/index";
 export { default as Thanks } from "./Thanks/index";
+export { default as Passenger } from "./Passenger/index";

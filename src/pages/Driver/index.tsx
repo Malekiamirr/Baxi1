@@ -400,7 +400,6 @@ function Driver({
           </div>
         </div>
       </Modal>
-      <input type="text" />
       <Modal isOpen={isBirthDateModalOpen} setIsOpen={setIsBirthDateModalOpen}>
         <form
           dir="rtl"
