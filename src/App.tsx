@@ -3,6 +3,7 @@ import {
   CarInfo,
   Collaboration,
   Driver,
+  Home,
   InitialLoading,
   Login,
   Passenger,
@@ -17,6 +18,7 @@ function App() {
   const [userType, setUserType] = useState("");
   const [colabrate, setColabrate] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [name, setName] = useState("");
 
   const handleNext = () => {
     setPage((prev) => prev + 1);
@@ -39,7 +41,9 @@ function App() {
     <div className="w-full h-screen relative overflow-hidden">
       {page > 1 && (
         <div
-          className="bg-[#E9E9E9] rounded-2xl absolute w-12 h-12 top-10 left-[34px] z-10 hover:cursor-pointer flex items-center justify-center"
+          className={`${
+            page > 4 && userType !== "driver" && "hidden"
+          } bg-[#E9E9E9] rounded-2xl absolute w-12 h-12 top-10 left-[34px] z-10 hover:cursor-pointer flex items-center justify-center`}
           onClick={handlePrev}
         >
           <img
@@ -99,6 +103,8 @@ function App() {
                 gender={gender}
                 setGender={setGender}
                 handleNext={handleNext}
+                setNameInput={setName}
+                nameInput={name}
               />
             )}
           </div>
@@ -122,6 +128,12 @@ function App() {
           {userType === "driver" && (
             <div className="w-screen">
               <Thanks page={page} />
+            </div>
+          )}
+
+          {userType !== "driver" && (
+            <div className="w-screen">
+              <Home name={name} phoneNumber={phoneNumber} />
             </div>
           )}
         </div>

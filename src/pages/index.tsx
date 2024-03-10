@@ -7,3 +7,4 @@ export { default as Collaboration } from "./Collaboration/index";
 export { default as CarInfo } from "./CarInfo/index";
 export { default as Thanks } from "./Thanks/index";
 export { default as Passenger } from "./Passenger/index";
+export { default as Home } from "./Home/index";

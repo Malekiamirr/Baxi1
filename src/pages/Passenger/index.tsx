@@ -5,12 +5,15 @@ function Passenger({
   handleNext,
   gender,
   setGender,
+  nameInput,
+  setNameInput,
 }: {
   handleNext: () => void;
   gender: string;
+  nameInput: string;
   setGender: React.Dispatch<React.SetStateAction<string>>;
+  setNameInput: React.Dispatch<React.SetStateAction<string>>;
 }) {
-  const [nameInput, setNameInput] = useState("");
   const [birthDate, setBirthDate] = useState("");
   const [ssn, setSsn] = useState<string>();
   const [isGenderModalOpen, setIsGenderModalOpen] = useState(false);
@@ -81,6 +84,7 @@ function Passenger({
         <h2 className="font-bold text-2xl text-end">مسافر ما باش</h2>
 
         <form
+          onSubmit={(e) => e.preventDefault()}
           dir="rtl"
           className="mt-[54px] flex flex-col items-center justify-center gap-8"
         >
