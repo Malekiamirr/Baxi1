@@ -33,7 +33,7 @@ function Home({ name, phoneNumber }: { name: string; phoneNumber: string }) {
       </p>
       <button
         className="font-bold bg-white border w-[156px] h-[47px] rounded-2xl text-lg"
-        onClick={() => goToSlide(3)}
+        onClick={() => goToSlide(2)}
       >
         شروع اولین سفر
       </button>
@@ -41,11 +41,11 @@ function Home({ name, phoneNumber }: { name: string; phoneNumber: string }) {
     <div className="h-screen">
       <Maps goToSlide={goToSlide} />
     </div>,
-    <div className="flex flex-col items-center justify-center w-full bg-red-300 gap-60">
+    <div className="flex flex-col items-center justify-center w-full gap-60 mt-44">
       <p className="font-bold text-[#A5A9B6] text-3xl">درگاه پرداخت الکی</p>
       <button
         className="font-bold bg-[#8CE9B4] w-[156px] h-[47px] rounded-2xl text-xl"
-        onClick={() => goToSlide(3)}
+        onClick={() => goToSlide(0)}
       >
         بازگشت
       </button>
